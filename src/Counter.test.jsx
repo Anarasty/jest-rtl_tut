@@ -26,4 +26,12 @@ describe(Counter, () => {
     fireEvent.click(decrementBttn);
     expect(Number(getByTestId("count").textContent)).toEqual(-1);
   });
+
+  it("count should be 0 if the restart button is clicked", () => {
+    const { getByTestId, getByRole } = render(<Counter initialCount={50} />);
+    const restartBttn = getByRole("button", { name: "Restart" });
+    expect(Number(getByTestId("count").textContent)).toEqual(50);
+    fireEvent.click(restartBttn);
+    expect(Number(getByTestId("count").textContent)).toEqual(0);
+  });
 });
