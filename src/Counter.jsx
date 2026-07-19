@@ -21,9 +21,8 @@ const Counter = ({ initialCount }) => {
 
   return (
     <div>
-      <h1>
-        Count: <h3 data-testid="count">{count}</h3>
-      </h1>
+      <h1>Count:</h1>
+      <h2 data-testid="count">{count}</h2>
       <div>
         <button onClick={increment}> Increment</button>
         <button onClick={decrement}> Decrement</button>
